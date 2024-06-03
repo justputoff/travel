@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 
@@ -13,21 +14,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // Disable foreign key checks
-        Schema::disableForeignKeyConstraints();
-
-        // Truncate all tables
-        DB::table('users')->truncate();
-        DB::table('roles')->truncate();
-        DB::table('destinations')->truncate();
-        DB::table('packages')->truncate();
-        DB::table('bookings')->truncate();
-        DB::table('reviews')->truncate();
-        DB::table('payments')->truncate();
-
-        // Enable foreign key checks
-        Schema::enableForeignKeyConstraints();
-
+        Artisan::call('migrate:refresh');
         // Call individual seeders
         $this->call([
             RoleSeeder::class,

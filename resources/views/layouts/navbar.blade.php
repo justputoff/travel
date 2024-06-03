@@ -89,6 +89,27 @@
                   <div data-i18n="Destinations">Destinations</div>
                 </a>
               </li>
+              <!-- Packages -->
+              <li class="menu-item {{ Route::is('packages*') ? 'active' : '' }}">
+                <a href="{{ route('packages.index') }}" class="menu-link">
+                  <i class="menu-icon tf-icons bx bxs-package"></i>
+                  <div data-i18n="Packages">Packages</div>
+                </a>
+              </li>
+              <!-- Bookings -->
+              <li class="menu-item {{ Route::is('books*') ? 'active' : '' }}">
+                <a href="{{ route('books.index') }}" class="menu-link">
+                  <i class="menu-icon tf-icons bx bxs-book"></i>
+                  <div data-i18n="Bookings">Bookings</div>
+                </a>
+              </li>
+              <!-- Payments -->
+              <li class="menu-item {{ Route::is('payments*') ? 'active' : '' }}">
+                <a href="{{ route('payments.index') }}" class="menu-link">
+                  <i class="menu-icon tf-icons bx bxs-credit-card"></i>
+                  <div data-i18n="Payments">Payments</div>
+                </a>
+              </li>
             </ul>
           </aside>
           <!-- / Menu -->

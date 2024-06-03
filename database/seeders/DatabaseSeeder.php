@@ -20,7 +20,7 @@ class DatabaseSeeder extends Seeder
             RoleSeeder::class,
             UserSeeder::class,
             DestinationSeeder::class,
-            // PackageSeeder::class,
+            PackageSeeder::class,
         ]);
     }
 }

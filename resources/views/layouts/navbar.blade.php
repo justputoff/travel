@@ -76,6 +76,21 @@
                   <div data-i18n="Analytics">Dashboard</div>
                 </a>
               </li>
+              <!-- Bookings -->
+              <li class="menu-item {{ Route::is('books*') ? 'active' : '' }}">
+                <a href="{{ route('books.index') }}" class="menu-link">
+                  <i class="menu-icon tf-icons bx bxs-book"></i>
+                  <div data-i18n="Bookings">Bookings</div>
+                </a>
+              </li>
+              <!-- Payments -->
+              <li class="menu-item {{ Route::is('payments*') ? 'active' : '' }}">
+                <a href="{{ route('payments.index') }}" class="menu-link">
+                  <i class="menu-icon tf-icons bx bxs-credit-card"></i>
+                  <div data-i18n="Payments">Payments</div>
+                </a>
+              </li>
+              @if(Auth::user()->role->name == 'Admin')
               <li class="menu-item {{ Route::is('user*') ? 'active' : '' }}">
                 <a href="{{ route('user.index') }}" class="menu-link">
                   <i class="menu-icon tf-icons bx bxs-user-detail"></i>
@@ -96,20 +111,7 @@
                   <div data-i18n="Packages">Packages</div>
                 </a>
               </li>
-              <!-- Bookings -->
-              <li class="menu-item {{ Route::is('books*') ? 'active' : '' }}">
-                <a href="{{ route('books.index') }}" class="menu-link">
-                  <i class="menu-icon tf-icons bx bxs-book"></i>
-                  <div data-i18n="Bookings">Bookings</div>
-                </a>
-              </li>
-              <!-- Payments -->
-              <li class="menu-item {{ Route::is('payments*') ? 'active' : '' }}">
-                <a href="{{ route('payments.index') }}" class="menu-link">
-                  <i class="menu-icon tf-icons bx bxs-credit-card"></i>
-                  <div data-i18n="Payments">Payments</div>
-                </a>
-              </li>
+              @endif
             </ul>
           </aside>
           <!-- / Menu -->

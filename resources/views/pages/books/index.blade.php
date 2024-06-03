@@ -22,6 +22,16 @@
                     <p class="card-text">{{ $package->description }}</p>
                     <p class="card-text"><strong>Price:</strong> {{ $package->price }}</p>
                     <p class="card-text"><strong>Destination:</strong> {{ $package->destination->name }}</p>
+                    <div class="mb-3">
+                        <label for="images" class="form-label">Images</label>
+                        <div class="row">
+                            @for ($i = 0; $i < 3; $i++)
+                                <div class="col-md-4 mb-3">
+                                    <img src="https://source.unsplash.com/1600x900/?{{ $package->name }}&sig={{ $i }}" alt="{{ $package->name }}" class="img-thumbnail" style="width: 100%; height: auto;">
+                                </div>
+                            @endfor
+                        </div>
+                    </div>
                     <a href="{{ route('books.create', ['package_id' => $package->id]) }}" class="btn btn-primary">Book Now</a>
                 </div>
             </div>

@@ -11,14 +11,7 @@
       <form action="{{ route('books.store') }}" method="POST">
         @csrf
         <input type="hidden" name="package_id" value="{{ $package->id }}">
-        <div class="mb-3">
-          <label for="user_id" class="form-label">User</label>
-          <select class="form-control" id="user_id" name="user_id" required>
-            @foreach($users as $user)
-              <option value="{{ $user->id }}">{{ $user->name }}</option>
-            @endforeach
-          </select>
-        </div>
+        <input type="hidden" name="user_id" value="{{ auth()->user()->id }}">
         <div class="mb-3">
           <label for="booking_date" class="form-label">Booking Date</label>
           <input type="date" class="form-control" id="booking_date" name="booking_date" required>

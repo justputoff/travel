@@ -18,8 +18,7 @@ class BookController extends Controller
     public function create(Request $request)
     {
         $package = Package::findOrFail($request->package_id);
-        $users = User::all();
-        return view('pages.books.create', compact('package', 'users'));
+        return view('pages.books.create', compact('package'));
     }
 
     public function store(Request $request)

@@ -17,7 +17,7 @@ return new class extends Migration
             $table->foreignId('package_id')->constrained()->onDelete('cascade');
             $table->date('booking_date');
             $table->integer('number_of_people');
-            $table->decimal('total_price', 8, 2);
+            $table->integer('total_price');
             $table->timestamps();
         });
     }

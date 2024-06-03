@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('name');
             $table->text('description');
             $table->integer('price');
-            $table->foreignId('destination_id');
+            $table->foreign('destination_id')->references('id')->on('destinations')->onDelete('cascade');
             $table->timestamps();
 
 

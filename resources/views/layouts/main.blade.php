@@ -54,7 +54,7 @@
       <script src="{{ asset('assets/js/config.js') }}"></script>
       {{-- <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css" /> --}}
       <link rel="stylesheet" href="https://cdn.datatables.net/2.0.0/css/dataTables.dataTables.css" />
-      @if (Route::is('report.index'))
+      @if (Route::is('payments.index'))
       <link rel="stylesheet" href="https://cdn.datatables.net/buttons/3.0.0/css/buttons.dataTables.css" />
       @endif
       <style>
@@ -148,7 +148,7 @@
   </script>
     <!-- Place this tag in your head or just before your close body tag. -->
     <script async defer src="https://buttons.github.io/buttons.js"></script>
-    @if (Route::is('report.index'))
+    @if (Route::is('payments.index'))
     <script>
       $(document).ready(function () {
           $('#example').DataTable({
@@ -157,19 +157,6 @@
                     buttons: ['excelHtml5', 'csvHtml5', 'pdfHtml5']
                 }
             }
-          });
-      });
-    </script>
-    @elseif(Route::is('transaction.index'))
-    <script>
-      $(document).ready(function () {
-          $('#example').DataTable({
-          });
-      });
-    </script>
-    <script>
-      $(document).ready(function () {
-          $('#example1').DataTable({
           });
       });
     </script>
@@ -185,7 +172,7 @@
     <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
     <script src="https://cdn.datatables.net/2.0.0/js/dataTables.js"></script>
-    @if (Route::is('report.index'))
+    @if (Route::is('payments.index'))
     <script src="https://cdn.datatables.net/buttons/3.0.0/js/dataTables.buttons.js"></script>
     <script src="https://cdn.datatables.net/buttons/3.0.0/js/buttons.html5.min.js"></script>
     <script src="https://cdn.datatables.net/buttons/3.0.0/js/buttons.dataTables.js"></script>
